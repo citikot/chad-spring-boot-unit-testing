@@ -1,10 +1,13 @@
 package com.luv2code.springmvc.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "history_grade")
+@NoArgsConstructor
 public class HistoryGrade implements Grade {
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
@@ -12,10 +15,6 @@ public class HistoryGrade implements Grade {
     private int studentId;
     @Column(name="grade")
     private double grade;
-
-    public HistoryGrade() {
-
-    }
 
     public HistoryGrade(double grade) {
         this.grade = grade;

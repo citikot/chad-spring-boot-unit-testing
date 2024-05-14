@@ -1,5 +1,6 @@
 package com.luv2code.springmvc.models;
 
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -7,6 +8,7 @@ import java.math.RoundingMode;
 import java.util.List;
 
 @Component
+@NoArgsConstructor
 public class StudentGrades {
 
     private List<Grade> mathGradeResults;
@@ -14,8 +16,6 @@ public class StudentGrades {
     private List<Grade> scienceGradeResults;
 
     private List<Grade> historyGradeResults;
-
-    public StudentGrades() {}
 
     public double addGradeResultsForSingleClass(List<Grade> grades) {
         double result = 0;

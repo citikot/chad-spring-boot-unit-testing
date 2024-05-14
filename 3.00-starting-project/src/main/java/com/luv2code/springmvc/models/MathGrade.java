@@ -1,9 +1,11 @@
 package com.luv2code.springmvc.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "math_grade")
+@NoArgsConstructor
 public class MathGrade implements Grade {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -12,10 +14,6 @@ public class MathGrade implements Grade {
     private int studentId;
     @Column(name="grade")
     private double grade;
-
-    public MathGrade() {
-
-    }
 
     public MathGrade(double grade) {
         this.grade = grade;

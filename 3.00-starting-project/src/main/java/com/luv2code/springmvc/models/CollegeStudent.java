@@ -1,9 +1,11 @@
 package com.luv2code.springmvc.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "student")
+@NoArgsConstructor
 public class CollegeStudent implements Student {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -14,10 +16,6 @@ public class CollegeStudent implements Student {
     private String lastname;
     @Column(name="email_address")
     private String emailAddress;
-
-    public CollegeStudent() {
-
-    }
 
     public CollegeStudent(String firstname, String lastname, String emailAddress) {
         this.firstname = firstname;
